@@ -1,37 +1,38 @@
+<!-- <div class="home-component">
+  <swiper-container
+    #swiper
+    [id]="swiperContainerId"
+    [slides-per-view]="slidePerView"
+    loop="true"
+    class="swiper-container"
+  >
+    <swiper-slide *ngFor="let slide of [1, 2, 3, 4]; let i = index">
+      <div class="slide-content">
+        <h2>Slide {{ i + 1 }}</h2>
+        <p>This is the content of slide {{ i + 1 }}.</p>
+      </div>
+    </swiper-slide>
+  </swiper-container>
 
-<div class="home-component">
-    <swiper-container
-      #swiper
-      [id]="swiperContainerId"
-      [slides-per-view]="slidePerView"
-      loop="true"
-      class="swiper-container"
-    >
-      <swiper-slide *ngFor="let image of images">
-        <div class="slide-content">
-          <img [src]="image.src" [alt]="image.alt" class="slide-image" />
-        </div>
-      </swiper-slide>
-    </swiper-container>
-  
-    <div class="navigation-controls">
-      <button (click)="changeSlide(-1)" class="prev-btn">Previous</button>
-      <button (click)="changeSlide(1)" class="next-btn">Next</button>
-    </div>
+  <div class="navigation-controls">
+    <button (click)="changeSlide(-1)" class="prev-btn">Previous</button>
+    <button (click)="changeSlide(1)" class="next-btn">Next</button>
   </div>
-  
+</div> -->
 
-   <!-- <p>Swipe to change slides</p>
+
+  <div>
+    <p>Swipe to change slides</p>
     <swiper-container loop="true">
       <swiper-slide>Slide 1</swiper-slide>
       <swiper-slide>Slide 2</swiper-slide>
       <swiper-slide>Slide 3</swiper-slide>
       <swiper-slide>Slide 4</swiper-slide>
-    </swiper-container> -->
+    </swiper-container>
+  </div>
 
 
     <div class="home-component">
-        <!-- Swiper Container -->
         <swiper-container
           #swiper
           [id]="swiperContainerId"
@@ -39,7 +40,6 @@
           loop="true"
           class="swiper-container"
         >
-          <!-- Use *ngFor inside a container -->
           <ng-container *ngFor="let image of images">
             <swiper-slide>
               <img [src]="image.src" [alt]="image.alt" class="slide-image" />
@@ -47,7 +47,6 @@
           </ng-container>
         </swiper-container>
       
-        <!-- Navigation Controls -->
         <div class="navigation-controls">
           <button (click)="changeSlide(-1)" class="prev-btn">Previous</button>
           <button (click)="changeSlide(1)" class="next-btn">Next</button>

@@ -1,6 +1,6 @@
 import {
   AfterViewInit,
-  Component,
+  Component,  
   ElementRef,
   Input,
   ViewChild,
@@ -9,17 +9,16 @@ import { SwiperContainer } from 'swiper/element/bundle';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { NgFor } from '@angular/common';
 
-
 @Component({
-  selector: 'app-home',
+  selector: 'app-home-2',
   standalone: true,
   imports: [NgFor],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
+  templateUrl: './home-2.component.html',
+  styleUrl: './home-2.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 
 })
-export class HomeComponent implements AfterViewInit {
+export class Home2Component  implements AfterViewInit {
   @Input() swiperContainerId = '';
   index = 0;
   slidePerView = 1;
@@ -28,7 +27,6 @@ export class HomeComponent implements AfterViewInit {
 
   initialized = false;
 
-  // Array of images for the slider
   images = [
     { src: 'assets/images/image1.webp', alt: 'Image 1 description' },
     { src: 'assets/images/image2.webp', alt: 'Image 2 description' },
@@ -36,7 +34,7 @@ export class HomeComponent implements AfterViewInit {
     { src: 'assets/images/image4.webp', alt: 'Image 4 description' },
   ];
 
-  constructor() { }
+  constructor() {}
 
   ngAfterViewInit(): void {
     setTimeout(() => {
@@ -44,46 +42,17 @@ export class HomeComponent implements AfterViewInit {
         .getElementById(this.swiperContainerId)
         ?.getElementsByClassName('swiper')[0]?.shadowRoot
         ?.firstChild as HTMLElement;
-      if (shadowRoot) {
-        shadowRoot.style.paddingBottom = '35px';
-      }
+      shadowRoot.style.paddingBottom = '35px';
     }, 300);
   }
 
-  // changeSlide(prevOrNext: number): void {
-  //   if (prevOrNext === -1) {
-  //     this.swiperRef.nativeElement.swiper.slidePrev();
-  //   } else {
-  //     this.swiperRef.nativeElement.swiper.slideNext();
-  //   }
-  // }
-
-  // changeSlide(prevOrNext: number): void {
-  //   if (!this.swiperRef) {
-  //     console.error('Swiper reference is not defined.');
-  //     return;
-  //   }
-
-  //   if (prevOrNext === -1) {
-  //     this.swiperRef.nativeElement.swiper.slidePrev();
-  //   } else {
-  //     this.swiperRef.nativeElement.swiper.slideNext();
-  //   }
-  // }
-
   changeSlide(prevOrNext: number): void {
-    if (!this.swiperRef || !this.swiperRef.nativeElement.swiper) {
-      console.warn('Swiper is not yet initialized.');
-      return;
-    }
-
     if (prevOrNext === -1) {
       this.swiperRef.nativeElement.swiper.slidePrev();
     } else {
       this.swiperRef.nativeElement.swiper.slideNext();
     }
   }
-
 }
 
 
