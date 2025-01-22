@@ -1,10 +1,11 @@
+import { NgIf } from '@angular/common';
 import { Component, ElementRef, AfterViewInit } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-home-5',
   standalone: true,
-  imports: [MatIconModule],
+  imports: [MatIconModule, NgIf],
   templateUrl: './home-5.component.html',
   styleUrls: ['./home-5.component.scss'],
 })
